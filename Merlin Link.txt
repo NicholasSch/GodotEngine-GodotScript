@@ -1,0 +1,5 @@
+My first complete game using Godot engine made as a serious game to help teach young kids some basic mathematical formulas,
+made a real controller too with a joystick and a RFID sensor that can be used togheter with the game. 
+The game is in portuguese as it was made to teach kids from my country specifically(Brazil) 
+
+Link:https://drive.google.com/file/d/15D76p3x-Z4yxB4BdnwIjh4I8eskqNj-5/view?usp=share_link
