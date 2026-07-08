@@ -1,0 +1,21 @@
+{
+	"color": "#ffffffff",
+	"description": "",
+	"display_name": "Esqueleto",
+	"display_name_bool": true,
+	"id": "character-1668274756.json",
+	"mirror_portraits": false,
+	"name": "Esqueleto",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 130,
+	"offset_y": -10,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://AssetsJogoMerlim/Sprites/SpritesEsqueleto/Skeleton_Idle2-removebg-preview.png"
+		}
+	],
+	"scale": 400,
+	"theme": ""
+}

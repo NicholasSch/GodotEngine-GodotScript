@@ -1,0 +1,21 @@
+{
+	"color": "#ff6102ed",
+	"description": "",
+	"display_name": "Morgana",
+	"display_name_bool": true,
+	"id": "character-1668715937.json",
+	"mirror_portraits": false,
+	"name": "Morgana",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": -20,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://AssetsJogoMerlim/Sprites/SpritesMorgana/Morgana PNG.png"
+		}
+	],
+	"scale": 171,
+	"theme": ""
+}

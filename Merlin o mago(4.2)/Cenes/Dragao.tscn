@@ -1,0 +1,91 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao 3.tres" type="Texture2D" id=1]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao ataque 1.tres" type="Texture2D" id=2]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao 1.tres" type="Texture2D" id=3]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao 2.tres" type="Texture2D" id=4]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao ataque 2.tres" type="Texture2D" id=5]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao 4.tres" type="Texture2D" id=6]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao ataque 4.tres" type="Texture2D" id=7]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao ataque 3.tres" type="Texture2D" id=8]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao ataque 5.tres" type="Texture2D" id=9]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao 0.tres" type="Texture2D" id=10]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao morte 3.tres" type="Texture2D" id=11]
+[ext_resource path="res://Scripts/Dragao.gd" type="Script" id=12]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao ataque 6.tres" type="Texture2D" id=13]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao morte 2.tres" type="Texture2D" id=14]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao ataque 11.tres" type="Texture2D" id=15]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao morte 1.tres" type="Texture2D" id=16]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao ataque 9.tres" type="Texture2D" id=17]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao ataque 13.tres" type="Texture2D" id=18]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao morte 5.tres" type="Texture2D" id=19]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao ataque 8.tres" type="Texture2D" id=20]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao ataque 10.tres" type="Texture2D" id=21]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao morte 6.tres" type="Texture2D" id=22]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao ataque 7.tres" type="Texture2D" id=23]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao ataque 12.tres" type="Texture2D" id=24]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao ataque 14.tres" type="Texture2D" id=25]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Dragao/Dragao morte 4.tres" type="Texture2D" id=26]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 23 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 15 ), ExtResource( 24 ), ExtResource( 18 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "Ataque",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Dragao anim",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 26 ), ExtResource( 19 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "Morte",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+size = Vector2( 40.5, 1.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+size = Vector2( 44.5, 42.5 )
+
+[node name="Dragao" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 8
+script = ExtResource( 12 )
+
+[node name="DragaoAnim" type="AnimatedSprite2D" parent="."]
+frames = SubResource( 1 )
+animation = "Dragao anim"
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 6.5, 46.5 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="Hitarea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 8
+
+[node name="hitcolision" type="CollisionShape2D" parent="Hitarea"]
+position = Vector2( 5.5, 1.5 )
+shape = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 1.4
+
+[connection signal="body_entered" from="Hitarea" to="." method="_on_Hitarea_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]

@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=2]
+
+[ext_resource path="res://AssetsJogoMerlim/Sprites/SpritesGoblin/Mobile_-_Final_Sky_Cross_Summoner_-_Black_Goblin-removebg-preview.png" type="Texture2D" id=1]
+
+[resource]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 436, 139, 65, 88 )

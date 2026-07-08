@@ -1,0 +1,21 @@
+{
+	"color": "#ffe20303",
+	"description": "",
+	"display_name": "Dragao",
+	"display_name_bool": true,
+	"id": "character-1668279779.json",
+	"mirror_portraits": false,
+	"name": "Dragao",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 80,
+	"offset_y": -35,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://AssetsJogoMerlim/Sprites/SpritesDragao/PlayStation_2_-_Namco_X_Capcom_-_Dragon-removebg-preview-removebg-preview - Copia.png"
+		}
+	],
+	"scale": 220,
+	"theme": "theme-1668279102.cfg"
+}

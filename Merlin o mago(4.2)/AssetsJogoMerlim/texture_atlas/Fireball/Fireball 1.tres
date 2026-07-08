@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=2]
+
+[ext_resource path="res://AssetsJogoMerlim/Sprites/SpriteAtaques/BolaDeFogo/DS_DSi_-_Naruto_Shippuden_Naruto_vs_Sasuke_-_Fireball_Rasengan-removebg-preview-removebg-preview__2_-removebg-preview.png" type="Texture2D" id=1]
+
+[resource]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 7, 79, 8, 5 )

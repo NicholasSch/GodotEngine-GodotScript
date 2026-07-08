@@ -1,0 +1,47 @@
+{
+	"events": [
+		{
+			"event_id": "dialogic_024",
+			"set_theme": "theme-1668875204.cfg"
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1668875186.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1668875186.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "(Use bola de fogo para iniciar combate ou outra carta para fechar os dialogos) Merlin?? Não acredito, a quanto tempo não te vejo por essas terras, você não sabe o que  aconteceu. A maligna Morgana voltou e trouxe seus capangas junto com ela e dominou todos os reinos de Camelot. Precisamos de você para derrota-la, rápido primeiro vá a floresta sombria seguindo a estrada da direita e tente derrotar o fedorento Goblin que esta dominando a floresta, volte para cá depois de conseguir!"
+		},
+		{
+			"emit_signal": "Não",
+			"event_id": "dialogic_040"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1668875149.json",
+		"name": "NPCQ1"
+	}
+}

@@ -1,0 +1,52 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Trovao/Trovao 1.tres" type="Texture2D" id=1]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Trovao/Trovao 3.tres" type="Texture2D" id=2]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Trovao/Trovao 2.tres" type="Texture2D" id=3]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Trovao/Trovao 15.tres" type="Texture2D" id=4]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Trovao/Trovao 9.tres" type="Texture2D" id=5]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Trovao/Trovao 4.tres" type="Texture2D" id=6]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Trovao/Trovao 8.tres" type="Texture2D" id=7]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Trovao/Trovao 14.tres" type="Texture2D" id=8]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Trovao/Trovao 11.tres" type="Texture2D" id=9]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Trovao/Trovao 16.tres" type="Texture2D" id=10]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Trovao/Trovao 10.tres" type="Texture2D" id=11]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Trovao/Trovao 6.tres" type="Texture2D" id=12]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Trovao/Trovao 12.tres" type="Texture2D" id=13]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Trovao/Trovao 5.tres" type="Texture2D" id=14]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Trovao/Trovao 7.tres" type="Texture2D" id=15]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Trovao/Trovao 13.tres" type="Texture2D" id=16]
+[ext_resource path="res://Scripts/Trovao.gd" type="Script" id=17]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Tempestade/Tempestade 23.tres" type="Texture2D" id=18]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 15 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 18 ) ],
+"loop": false,
+"name": "Trovoada",
+"speed": 9.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+size = Vector2( 77.5, 75.5 )
+
+[node name="Trovao" type="CharacterBody2D"]
+position = Vector2( 78, 78 )
+scale = Vector2( 0.4, 0.4 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 17 )
+
+[node name="TrovaoAnim" type="AnimatedSprite2D" parent="."]
+frames = SubResource( 1 )
+animation = "Trovoada"
+
+[node name="TrovaoCollision" type="CollisionShape2D" parent="."]
+position = Vector2( 1.5, -1.5 )
+shape = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

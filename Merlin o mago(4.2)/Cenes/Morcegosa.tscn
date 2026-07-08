@@ -1,0 +1,94 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Attack_3.tres" type="Texture2D" id=1]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Attack_5.tres" type="Texture2D" id=2]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Attack_2.tres" type="Texture2D" id=3]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Death_1.tres" type="Texture2D" id=4]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Death_2.tres" type="Texture2D" id=5]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Death_3.tres" type="Texture2D" id=6]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Attack_6.tres" type="Texture2D" id=7]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Attack_1.tres" type="Texture2D" id=8]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Attack_4.tres" type="Texture2D" id=9]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Death_0.tres" type="Texture2D" id=10]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Hit_1.tres" type="Texture2D" id=11]
+[ext_resource path="res://Scripts/Morcegosa.gd" type="Script" id=12]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Attack_7.tres" type="Texture2D" id=13]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Hit_2.tres" type="Texture2D" id=14]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Attack_0.tres" type="Texture2D" id=15]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Hit_0.tres" type="Texture2D" id=16]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Hit_3.tres" type="Texture2D" id=17]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Idle_0.tres" type="Texture2D" id=18]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Idle_1.tres" type="Texture2D" id=19]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Idle_7.tres" type="Texture2D" id=20]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Idle_5.tres" type="Texture2D" id=21]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Idle_6.tres" type="Texture2D" id=22]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Idle_2.tres" type="Texture2D" id=23]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Idle_4.tres" type="Texture2D" id=24]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Morcego/Morcego_Idle_3.tres" type="Texture2D" id=25]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 9 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 13 ) ],
+"loop": false,
+"name": "Ataque",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Dead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "Hit",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "Morcegosa anim",
+"speed": 6.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+size = Vector2( 40.5, 1.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+size = Vector2( 41, 37.5 )
+
+[node name="Morcegosa" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 8
+script = ExtResource( 12 )
+
+[node name="MorcegosaAnim" type="AnimatedSprite2D" parent="."]
+frames = SubResource( 1 )
+animation = "Hit"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 6.5, 46.5 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="Hitarea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 8
+
+[node name="hitcolision" type="CollisionShape2D" parent="Hitarea"]
+position = Vector2( 2, -0.5 )
+shape = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="body_entered" from="Hitarea" to="." method="_on_Hitarea_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]

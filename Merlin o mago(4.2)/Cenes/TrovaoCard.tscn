@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://AssetsJogoMerlim/Sprites/Cartas/WhatsApp Image 2022-11-11 at 17.46.05.jpeg" type="Texture2D" id=1]
+[ext_resource path="res://AssetsJogoMerlim/Fontes/BalsamiqSans-Regular.ttf" type="FontFile" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+size = Vector2( 48, 68.25 )
+
+[sub_resource type="FontFile" id=2]
+size = 20
+font_data = ExtResource( 2 )
+
+[node name="TrovaoCard" type="Area2D"]
+
+[node name="TrovaoCardCollsiion" type="CollisionShape2D" parent="."]
+position = Vector2( 177, 536.25 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="TrovaoCardSprite" type="Sprite2D" parent="."]
+position = Vector2( 176, 537 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 138.0
+offset_top = 569.0
+offset_right = 215.0
+offset_bottom = 594.0
+
+[node name="Valor" type="Label" parent="."]
+offset_left = 159.0
+offset_top = 570.0
+offset_right = 207.0
+offset_bottom = 594.0
+theme_override_colors/font_color = Color( 0.733333, 0.156863, 0.0392157, 1 )
+theme_override_fonts/font = SubResource( 2 )
+text = "9999"

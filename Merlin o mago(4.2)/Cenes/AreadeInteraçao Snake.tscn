@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=77]
+size = Vector2( 225, 173.5 )
+
+[node name="AreadeInteraçaoSnake" type="Area2D"]
+
+[node name="Areadebatalhacolisao" type="CollisionShape2D" parent="."]
+position = Vector2( 364, 469.5 )
+shape = SubResource( 77 )

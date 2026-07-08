@@ -1,0 +1,21 @@
+{
+	"color": "#ff0d5a02",
+	"description": "",
+	"display_name": "Goblin",
+	"display_name_bool": true,
+	"id": "character-1668190496.json",
+	"mirror_portraits": false,
+	"name": "Goblin",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": -10,
+	"offset_y": -40,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://AssetsJogoMerlim/Sprites/SpritesGoblin/Mobile_-_Final_Sky_Cross_Summoner_-_Black_Goblin-removebg-preview.png"
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}

@@ -1,0 +1,21 @@
+{
+	"color": "#ff49ee07",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1668274202.json",
+	"mirror_portraits": false,
+	"name": "Snake",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 80,
+	"offset_y": -40,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://AssetsJogoMerlim/Sprites/SpriteSnake/Genesis_32X_SCD_-_Aladdin_-_Snake-removebg-preview-removebg-preview - Copia.png"
+		}
+	],
+	"scale": 250,
+	"theme": ""
+}

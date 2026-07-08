@@ -1,0 +1,71 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Goblin/Goblin idle 2.tres" type="Texture2D" id=1]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Goblin/Goblin idle 1.tres" type="Texture2D" id=2]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Goblin/Goblin idle 3.tres" type="Texture2D" id=3]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Goblin/Goblin ataque 5.tres" type="Texture2D" id=4]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Goblin/Goblin ataque 6.tres" type="Texture2D" id=5]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Goblin/Goblin ataque 7.tres" type="Texture2D" id=6]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Goblin/Goblin ataque 3.tres" type="Texture2D" id=7]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Goblin/Goblin ataque 4.tres" type="Texture2D" id=8]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Goblin/Goblin ataque 1.tres" type="Texture2D" id=9]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Goblin/Goblin ataque 2.tres" type="Texture2D" id=10]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Goblin/Goblin idle 4.tres" type="Texture2D" id=11]
+[ext_resource path="res://Scripts/Goblin.gd" type="Script" id=13]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Ataque",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "Goblin anim",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+size = Vector2( 40.5, 1.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+size = Vector2( 44.5, 42.5 )
+
+[node name="Goblin" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 8
+script = ExtResource( 13 )
+
+[node name="GoblinAnim" type="AnimatedSprite2D" parent="."]
+frames = SubResource( 1 )
+animation = "Ataque"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 6.5, 46.5 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="Hitarea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 8
+
+[node name="hitcolision" type="CollisionShape2D" parent="Hitarea"]
+position = Vector2( 5.5, 1.5 )
+shape = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="body_entered" from="Hitarea" to="." method="_on_Hitarea_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]

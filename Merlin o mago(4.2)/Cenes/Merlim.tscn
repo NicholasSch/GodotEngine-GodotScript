@@ -1,0 +1,152 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlin down 2.tres" type="Texture2D" id=1]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlim down 1.tres" type="Texture2D" id=2]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlim up 1.tres" type="Texture2D" id=3]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlim up 3.tres" type="Texture2D" id=4]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlin up 2.tres" type="Texture2D" id=5]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlin up 4.tres" type="Texture2D" id=6]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlin down 4.tres" type="Texture2D" id=7]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlin side 4.tres" type="Texture2D" id=8]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlim side 3.tres" type="Texture2D" id=9]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlin side 2.tres" type="Texture2D" id=10]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlim side 1.tres" type="Texture2D" id=11]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlim down 3.tres" type="Texture2D" id=12]
+[ext_resource path="res://Scripts/Merlim.gd" type="Script" id=13]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlin ataque 10.tres" type="Texture2D" id=14]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlin ataque 6.tres" type="Texture2D" id=15]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlin ataque 8.tres" type="Texture2D" id=16]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlin ataque 2.tres" type="Texture2D" id=17]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlin ataque 4.tres" type="Texture2D" id=18]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlin ataque 12.tres" type="Texture2D" id=19]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlim ataque 7.tres" type="Texture2D" id=20]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlim ataque 5.tres" type="Texture2D" id=21]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlim ataque 3.tres" type="Texture2D" id=22]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlim ataque 9.tres" type="Texture2D" id=23]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlim ataque 11.tres" type="Texture2D" id=24]
+[ext_resource path="res://AssetsJogoMerlim/texture_atlas/Merlim/Merlim ataque 1.tres" type="Texture2D" id=25]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 25 ), ExtResource( 17 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 16 ), ExtResource( 23 ), ExtResource( 14 ), ExtResource( 24 ), ExtResource( 19 ) ],
+"loop": false,
+"name": "Ataque",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Down",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Side",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 12 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Up",
+"speed": 4.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 13.0
+height = 4.0
+
+[sub_resource type="Animation" id=3]
+resource_name = "Camerashake"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 130, 105 ), Vector2( 90, 105 ), Vector2( 170, 105 ), Vector2( 90, 105 ), Vector2( 170, 105 ), Vector2( 130, 105 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Vector2( 130, 105 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Vector2( 622, 133 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=5]
+size = Vector2( 15.5, 17 )
+
+[node name="Merlim" type="CharacterBody2D"]
+position = Vector2( 130, 167 )
+script = ExtResource( 13 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 134, 102 )
+area_mask = 0
+
+[node name="MerlinAnim" type="AnimatedSprite2D" parent="."]
+position = Vector2( 131, 101 )
+frames = SubResource( 1 )
+animation = "Ataque"
+
+[node name="Camera1" type="Camera2D" parent="."]
+position = Vector2( 130, 105 )
+zoom = Vector2( 0.4, 0.4 )
+
+[node name="Colisao1" type="CollisionShape2D" parent="."]
+position = Vector2( 131, 102 )
+shape = SubResource( 2 )
+
+[node name="Camera2" type="Camera2D" parent="."]
+position = Vector2( 622, 133 )
+zoom = Vector2( 0.7, 0.7 )
+limit_right = 670
+limit_bottom = 520
+
+[node name="Camerashake" type="AnimationPlayer" parent="."]
+anims/Camerashake = SubResource( 3 )
+anims/RESET = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="MerlimDamagearea" type="Area2D" parent="."]
+collision_mask = 8
+
+[node name="MerlimDamageCollision" type="CollisionShape2D" parent="MerlimDamagearea"]
+position = Vector2( 130.5, 101 )
+shape = SubResource( 5 )
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 1.7
+
+[node name="Camera3" type="Camera2D" parent="."]
+position = Vector2( 346, 138 )
+zoom = Vector2( 0.7, 0.7 )
+limit_bottom = 520
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="MerlimDamagearea" to="." method="_on_MerlimDamagearea_body_entered"]
+[connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]

@@ -1,0 +1,47 @@
+{
+	"events": [
+		{
+			"event_id": "dialogic_024",
+			"set_theme": "theme-1668875204.cfg"
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1668875186.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1668875186.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Você é realmente magnifico!!! Agora você está pronto para batalhar com a Morgana e finalmente nos livrar de uma vez por todas dessa bruxa do mal!! Siga pelo caminho de cima e da direita para encontra-la e boa sorte!"
+		},
+		{
+			"emit_signal": "Não",
+			"event_id": "dialogic_040"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1668875536.json",
+		"name": "NPCQ6"
+	}
+}

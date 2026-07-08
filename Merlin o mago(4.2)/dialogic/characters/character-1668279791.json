@@ -1,0 +1,21 @@
+{
+	"color": "#ff080303",
+	"description": "",
+	"display_name": "Morcegosa",
+	"display_name_bool": true,
+	"id": "character-1668279791.json",
+	"mirror_portraits": false,
+	"name": "Morcegosa",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 150,
+	"offset_y": -20,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://AssetsJogoMerlim/Sprites/SpritesMorcego/Flight2.png"
+		}
+	],
+	"scale": 300,
+	"theme": ""
+}
