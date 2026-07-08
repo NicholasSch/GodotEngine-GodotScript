@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dgedfo5oj7ex7"]
+
+[ext_resource type="Script" uid="uid://igwe035suprb" path="res://Scripts/Main.gd" id="1_vy5pj"]
+[ext_resource type="Texture2D" uid="uid://ebv34o7fi8yc" path="res://Assets/wallpaperfreeway.png" id="2_bmxlf"]
+[ext_resource type="PackedScene" uid="uid://nvu8m5kg8cw1" path="res://Prefabs/core/Player1.tscn" id="3_4kpch"]
+[ext_resource type="PackedScene" uid="uid://cxa16gy18jojo" path="res://Prefabs/objects/FinishLine.tscn" id="4_grg3l"]
+[ext_resource type="AudioStream" uid="uid://cq70rdfrt0yps" path="res://Assets/sounds/theme.wav" id="5_frkhe"]
+[ext_resource type="AudioStream" uid="uid://dp0jeoovqskng" path="res://Assets/sounds/score.wav" id="6_1p5hy"]
+[ext_resource type="AudioStream" uid="uid://dcfoik1b3ue63" path="res://Assets/sounds/win.wav" id="7_h1m7h"]
+[ext_resource type="PackedScene" uid="uid://by1y0vg03djj" path="res://Prefabs/objects/HUD.tscn" id="8_erwvk"]
+[ext_resource type="PackedScene" uid="uid://cgbgkx76vs0ol" path="res://Prefabs/core/Player2.tscn" id="9_2w5on"]
+
+[node name="Main" type="Node" unique_id=2006158808]
+script = ExtResource("1_vy5pj")
+
+[node name="Road" type="Sprite2D" parent="." unique_id=110644787]
+texture = ExtResource("2_bmxlf")
+centered = false
+
+[node name="FinishLine" parent="." unique_id=1752365056 instance=ExtResource("4_grg3l")]
+position = Vector2(640, 66)
+
+[node name="FastCarsTimer" type="Timer" parent="." unique_id=1952346229]
+autostart = true
+
+[node name="SlowCarsTimer" type="Timer" parent="." unique_id=720823603]
+wait_time = 2.5
+autostart = true
+
+[node name="ThemeAudio" type="AudioStreamPlayer" parent="." unique_id=1404350476]
+stream = ExtResource("5_frkhe")
+volume_db = -19.909
+
+[node name="ScoreAudio" type="AudioStreamPlayer" parent="." unique_id=70391680]
+stream = ExtResource("6_1p5hy")
+volume_db = -5.0
+
+[node name="VictoryAudio" type="AudioStreamPlayer" parent="." unique_id=91807304]
+stream = ExtResource("7_h1m7h")
+volume_db = -10.0
+
+[node name="HUD" parent="." unique_id=785886359 instance=ExtResource("8_erwvk")]
+
+[node name="Player1" parent="." unique_id=12788477 instance=ExtResource("3_4kpch")]
+position = Vector2(400, 690)
+
+[node name="Player2" parent="." unique_id=1145232374 instance=ExtResource("9_2w5on")]
+position = Vector2(800, 690)
+
+[connection signal="timeout" from="FastCarsTimer" to="." method="_on_timer_carros_rapido_timeout"]
+[connection signal="timeout" from="SlowCarsTimer" to="." method="_on_timer_carros_lento_timeout"]
+[connection signal="restart" from="HUD" to="." method="_on_restart"]
+[connection signal="scored" from="Player1" to="." method="_on_player1_scored"]
+[connection signal="scored" from="Player2" to="." method="_on_player2_scored"]

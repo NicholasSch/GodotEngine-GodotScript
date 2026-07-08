@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cxa16gy18jojo"]
+
+[ext_resource type="Texture2D" uid="uid://dpsmy06wd7fy3" path="res://Assets/win.png" id="1"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(1280, 20)
+
+[node name="FinishLine" type="RigidBody2D" unique_id=791218033]
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1565742426]
+texture = ExtResource("1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=134685035]
+shape = SubResource("1")

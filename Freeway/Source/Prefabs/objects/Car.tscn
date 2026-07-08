@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://0tgdvjfrhuog"]
+
+[ext_resource type="Script" uid="uid://ca3dy6dy5jh7x" path="res://Scripts/Car.gd" id="1_71gn0"]
+[ext_resource type="Texture2D" uid="uid://bffdi47ond4hl" path="res://Assets/sprites/cars/car (1).png" id="2_sv77u"]
+[ext_resource type="Texture2D" uid="uid://cv05s20jvkj8j" path="res://Assets/sprites/cars/car (2).png" id="3_x8pb4"]
+[ext_resource type="Texture2D" uid="uid://crn8rdsayece8" path="res://Assets/sprites/cars/car (3).png" id="4_kigik"]
+[ext_resource type="Texture2D" uid="uid://csfuj8gmixjp6" path="res://Assets/sprites/cars/car (4).png" id="5_uxvo4"]
+[ext_resource type="Texture2D" uid="uid://qd4j7syf053e" path="res://Assets/sprites/cars/car (5).png" id="6_qcexk"]
+[ext_resource type="Texture2D" uid="uid://dpnclodqeltiy" path="res://Assets/sprites/cars/car (6).png" id="7_rm7u6"]
+[ext_resource type="Texture2D" uid="uid://dqeefuvff0wb7" path="res://Assets/sprites/cars/car (7).png" id="8_v4pmr"]
+[ext_resource type="Texture2D" uid="uid://c4wi6f7b4s3gj" path="res://Assets/sprites/cars/car (8).png" id="9_dfltk"]
+[ext_resource type="Texture2D" uid="uid://cuqv0lhftducw" path="res://Assets/sprites/cars/car (9).png" id="10_r2v6m"]
+[ext_resource type="Texture2D" uid="uid://dv8d5scsqmi2a" path="res://Assets/sprites/cars/car (10).png" id="11_8u2ua"]
+[ext_resource type="Texture2D" uid="uid://bhhorppycdma7" path="res://Assets/sprites/cars/car (11).png" id="12_ah31v"]
+[ext_resource type="Texture2D" uid="uid://bajxgpogj55ra" path="res://Assets/sprites/cars/car (12).png" id="13_s06pr"]
+[ext_resource type="Texture2D" uid="uid://bmo8axas8whif" path="res://Assets/sprites/cars/car (13).png" id="14_qpjxg"]
+[ext_resource type="Texture2D" uid="uid://4dq4ojqgcnpv" path="res://Assets/sprites/cars/car (14).png" id="15_r6vu4"]
+
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sv77u")
+}],
+"loop": 1,
+"name": &"car01",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x8pb4")
+}],
+"loop": 1,
+"name": &"car02",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kigik")
+}],
+"loop": 1,
+"name": &"car03",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_uxvo4")
+}],
+"loop": 1,
+"name": &"car04",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_qcexk")
+}],
+"loop": 1,
+"name": &"car05",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_rm7u6")
+}],
+"loop": 1,
+"name": &"car06",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_v4pmr")
+}],
+"loop": 1,
+"name": &"car07",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_dfltk")
+}],
+"loop": 1,
+"name": &"car08",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_r2v6m")
+}],
+"loop": 1,
+"name": &"car09",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_8u2ua")
+}],
+"loop": 1,
+"name": &"car10",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_ah31v")
+}],
+"loop": 1,
+"name": &"car11",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_s06pr")
+}],
+"loop": 1,
+"name": &"car12",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_qpjxg")
+}],
+"loop": 1,
+"name": &"car13",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_r6vu4")
+}],
+"loop": 1,
+"name": &"car14",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(46, 30)
+
+[node name="Carros" type="RigidBody2D" unique_id=786728442]
+gravity_scale = 0.0
+script = ExtResource("1_71gn0")
+
+[node name="Animation" type="AnimatedSprite2D" parent="." unique_id=762643009]
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("1")
+animation = &"car14"
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1003065907]
+shape = SubResource("2")
+
+[node name="Notificator" type="VisibleOnScreenNotifier2D" parent="." unique_id=1316674278]
+
+[connection signal="screen_exited" from="Notificator" to="." method="_on_notificator_screen_exited"]

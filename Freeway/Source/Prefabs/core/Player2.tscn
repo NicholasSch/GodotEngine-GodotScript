@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cgbgkx76vs0ol"]
+
+[ext_resource type="PackedScene" uid="uid://nvu8m5kg8cw1" path="res://Prefabs/core/Player1.tscn" id="1"]
+[ext_resource type="Script" uid="uid://cscaudacwdya4" path="res://Scripts/Player2.gd" id="2"]
+
+[node name="Player2" unique_id=864704395 instance=ExtResource("1")]
+script = ExtResource("2")

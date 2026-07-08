@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://by1y0vg03djj"]
+
+[ext_resource type="FontFile" uid="uid://tws6jr71h6d5" path="res://Assets/PressStart2P-Regular.ttf" id="1"]
+[ext_resource type="Script" uid="uid://ljdkgxqb0fqm" path="res://Scripts/HUD.gd" id="2"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[node name="HUD" type="CanvasLayer" unique_id=229822243]
+script = ExtResource("2")
+
+[node name="ScoreP1" type="Label" parent="." unique_id=152622128]
+offset_left = 350.0
+offset_right = 450.0
+offset_bottom = 60.0
+theme_override_fonts/font = SubResource("1")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message" type="Label" parent="." unique_id=1298050047]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -190.0
+offset_right = 294.0
+offset_bottom = -90.0
+theme_override_fonts/font = SubResource("1")
+text = "Player 1 Ganhou! "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1925685619]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -60.0
+offset_right = 200.0
+offset_bottom = 60.0
+theme_override_fonts/font = SubResource("1")
+text = "Reinciar"
+
+[node name="ScoreP2" type="Label" parent="." unique_id=1916975262]
+offset_left = 800.0
+offset_right = 900.0
+offset_bottom = 60.0
+theme_override_fonts/font = SubResource("1")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
